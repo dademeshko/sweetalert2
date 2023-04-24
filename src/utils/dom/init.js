@@ -121,32 +121,32 @@ const setupRTL = (targetElement) => {
   }
 }
 
-/**
- * Add modal + backdrop + no-war message for Russians to DOM
- *
- * @param {SweetAlertOptions} params
- */
-export const init = (params) => {
-  // Clean up the old popup container if it exists
-  const oldContainerExisted = resetOldContainer()
+// /**
+//  * Add modal + backdrop + no-war message for Russians to DOM
+//  *
+//  * @param {SweetAlertOptions} params
+//  */
+// export const init = (params) => {
+//   // Clean up the old popup container if it exists
+//   const oldContainerExisted = resetOldContainer()
 
-  /* istanbul ignore if */
-  if (isNodeEnv()) {
-    error('SweetAlert2 requires document to initialize')
-    return
-  }
+//   /* istanbul ignore if */
+//   if (isNodeEnv()) {
+//     error('SweetAlert2 requires document to initialize')
+//     return
+//   }
 
-  const container = document.createElement('div')
-  container.className = swalClasses.container
-  if (oldContainerExisted) {
-    addClass(container, swalClasses['no-transition'])
-  }
-  setInnerHtml(container, sweetHTML)
+//   const container = document.createElement('div')
+//   container.className = swalClasses.container
+//   if (oldContainerExisted) {
+//     addClass(container, swalClasses['no-transition'])
+//   }
+//   setInnerHtml(container, sweetHTML)
 
-  const targetElement = getTarget(params.target)
-  targetElement.appendChild(container)
+//   const targetElement = getTarget(params.target)
+//   targetElement.appendChild(container)
 
-  setupAccessibility(params)
-  setupRTL(targetElement)
-  addInputChangeListeners()
-}
+//   setupAccessibility(params)
+//   setupRTL(targetElement)
+//   addInputChangeListeners()
+// }
